@@ -1,0 +1,1962 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>কবিতার ঝুড়ি সাহিত্য পত্রিকা — Notice Board</title>
+
+<style>
+
+:root{
+  --green:#123c31;
+  --green2:#1e5947;
+  --gold:#b58b4a;
+  --cream:#f7f1e4;
+  --paper:#fffdf8;
+  --ink:#24302b;
+  --muted:#746957;
+  --red:#8d241d;
+  --line:#dfcfad;
+  --shadow:0 18px 50px rgba(31,48,41,.13)
+}
+
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:
+    "Noto Sans Bengali",
+    "Nirmala UI",
+    "SolaimanLipi",
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(181,139,74,.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(18,60,49,.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #efe5d2,
+      #fffdf8 48%,
+      #f3ead8
+    );
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.35;
+
+  background-image:
+    radial-gradient(
+      #8f774d .45px,
+      transparent .45px
+    );
+
+  background-size:9px 9px;
+}
+
+
+/* ================= TOP BAR ================= */
+
+.top{
+  background:var(--green);
+  color:#f8f0df;
+  text-align:center;
+  padding:8px 15px;
+  font-size:13px;
+  letter-spacing:.3px
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+  position:relative;
+  overflow:hidden;
+
+  text-align:center;
+  color:white;
+
+  padding:32px 18px 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0e3027,
+      #1a4b3c 60%,
+      #123a30
+    );
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.18)
+}
+
+header:before,
+header:after{
+  content:"";
+  position:absolute;
+
+  border:
+    1px solid
+    rgba(227,199,143,.35);
+
+  border-radius:50%;
+
+  width:300px;
+  height:300px;
+
+  top:-150px
+}
+
+header:before{
+  left:-120px
+}
+
+header:after{
+  right:-120px
+}
+
+.brand{
+  position:relative;
+  z-index:1
+}
+
+.logo{
+  width:116px;
+  height:116px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  background:#fff;
+
+  border:
+    5px solid
+    #f7edda;
+
+  box-shadow:
+    0 8px 28px
+    rgba(0,0,0,.28)
+}
+
+.kicker{
+  font-family:Georgia,serif;
+
+  letter-spacing:2.5px;
+
+  font-size:13px;
+
+  color:#e6cd9b;
+
+  margin-top:13px
+}
+
+h1{
+  font-size:
+    clamp(28px,5vw,48px);
+
+  margin:7px 0 3px;
+
+  font-weight:900
+}
+
+.tag{
+  margin:0;
+
+  color:#e9ddc6;
+
+  font-size:14px
+}
+
+nav{
+  display:flex;
+
+  justify-content:center;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+
+  margin-top:19px
+}
+
+nav a{
+  color:#f8f0df;
+
+  text-decoration:none;
+
+  border:
+    1px solid
+    rgba(227,199,143,.45);
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.07);
+
+  font-weight:700
+}
+
+nav a:hover{
+  background:
+    rgba(255,255,255,.15)
+}
+
+
+/* ================= MAIN ================= */
+
+.wrap{
+  max-width:1220px;
+
+  margin:28px auto;
+
+  padding:0 18px
+}
+
+.layout{
+  display:grid;
+
+  grid-template-columns:
+    390px 1fr;
+
+  gap:24px;
+
+  align-items:start
+}
+
+.panel,
+.preview{
+
+  background:
+    rgba(255,253,248,.92);
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:24px;
+
+  box-shadow:var(--shadow);
+
+  backdrop-filter:blur(8px)
+}
+
+.panel{
+  padding:23px;
+
+  position:sticky;
+
+  top:16px
+}
+
+.panel h2{
+  color:var(--green);
+
+  margin:0 0 5px;
+
+  font-size:24px
+}
+
+.panel .sub{
+  color:var(--muted);
+
+  font-size:13px;
+
+  margin:0 0 18px
+}
+
+label{
+  display:block;
+
+  font-weight:800;
+
+  color:var(--green);
+
+  margin:
+    14px 0 6px
+}
+
+input,
+textarea{
+
+  width:100%;
+
+  border:
+    1px solid
+    #d8c7a6;
+
+  border-radius:12px;
+
+  padding:12px 13px;
+
+  font:inherit;
+
+  color:var(--ink);
+
+  background:#fffefa;
+
+  outline:none;
+
+  transition:.2s
+}
+
+input:focus,
+textarea:focus{
+
+  border-color:var(--gold);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(181,139,74,.12)
+}
+
+textarea{
+
+  min-height:210px;
+
+  resize:vertical;
+
+  line-height:1.75
+}
+
+.row{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:10px
+}
+
+.check{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  margin:14px 0 6px;
+
+  color:var(--ink)
+}
+
+.check input{
+
+  width:auto;
+
+  accent-color:var(--green)
+}
+
+.hint{
+
+  font-size:12.5px;
+
+  line-height:1.65;
+
+  color:var(--muted);
+
+  background:#f6efdf;
+
+  border-radius:12px;
+
+  padding:10px 12px
+}
+
+.btn{
+
+  width:100%;
+
+  border:0;
+
+  border-radius:12px;
+
+  padding:13px 15px;
+
+  font:inherit;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+  transition:
+    transform .15s,
+    box-shadow .15s
+}
+
+.btn:hover{
+
+  transform:
+    translateY(-1px)
+}
+
+.primary{
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--green2)
+    );
+
+  color:#fff;
+
+  box-shadow:
+    0 8px 18px
+    rgba(18,60,49,.2)
+}
+
+.secondary{
+
+  margin-top:9px;
+
+  background:#efe3cc;
+
+  color:var(--green)
+}
+
+
+/* ================= PREVIEW ================= */
+
+.preview{
+
+  padding:15px
+}
+
+.preview-head{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:
+    2px 6px 12px
+}
+
+.preview-head strong{
+
+  color:var(--green)
+}
+
+.badge{
+
+  font-size:12px;
+
+  padding:6px 10px;
+
+  border-radius:999px;
+
+  background:#edf3ef;
+
+  color:var(--green);
+
+  font-weight:800
+}
+
+.canvas-wrap{
+
+  background:#e9dfcc;
+
+  padding:12px;
+
+  border-radius:17px;
+
+  border:
+    1px solid
+    #d9c7a6
+}
+
+canvas{
+
+  display:block;
+
+  width:100%;
+
+  height:auto;
+
+  background:#fffdf7;
+
+  border-radius:8px
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+  max-width:1220px;
+
+  margin:0 auto 28px;
+
+  padding:0 18px;
+
+  text-align:center;
+
+  color:#6f654f;
+
+  font-size:13px
+}
+
+.toast{
+
+  position:fixed;
+
+  right:18px;
+
+  bottom:18px;
+
+  z-index:20;
+
+  background:var(--green);
+
+  color:#fff;
+
+  padding:12px 16px;
+
+  border-radius:12px;
+
+  box-shadow:var(--shadow);
+
+  opacity:0;
+
+  transform:translateY(10px);
+
+  pointer-events:none;
+
+  transition:.25s
+}
+
+.toast.show{
+
+  opacity:1;
+
+  transform:none
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .layout{
+
+    grid-template-columns:1fr
+  }
+
+  .panel{
+
+    position:static
+  }
+
+  .preview{
+
+    order:-1
+  }
+
+}
+
+@media(max-width:600px){
+
+  .wrap{
+
+    margin-top:16px;
+
+    padding:0 10px
+  }
+
+  .row{
+
+    grid-template-columns:1fr
+  }
+
+  header{
+
+    padding:24px 12px
+  }
+
+  .logo{
+
+    width:96px;
+    height:96px
+  }
+
+  .panel{
+
+    padding:17px
+  }
+
+  .preview{
+
+    padding:9px
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="top">
+
+THE VOICE OF POETRY
+•
+BENGALI POETS' LITERARY MAGAZINE
+
+</div>
+
+
+<header>
+
+<div class="brand">
+
+<img
+  class="logo"
+  src="logo.jpg"
+  alt="কবিতার ঝুড়ি সাহিত্য পত্রিকার লোগো"
+>
+
+
+<div class="kicker">
+
+THE VOICE OF POETRY
+
+</div>
+
+
+<h1>
+
+কবিতার ঝুড়ি সাহিত্য পত্রিকা
+
+</h1>
+
+
+<p class="tag">
+
+Notice Board
+&nbsp;•&nbsp;
+সাহিত্য • কবিতা • সৃজন • সংস্কৃতি
+
+</p>
+
+
+<nav>
+
+<a href="#generator">
+নোটিশ তৈরি
+</a>
+
+<a href="#preview">
+প্রিভিউ
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main
+  class="wrap"
+  id="generator"
+>
+
+<div class="layout">
+
+
+<!-- ================= FORM ================= -->
+
+<section class="panel">
+
+<h2>
+
+📌 নোটিশ তৈরি করুন
+
+</h2>
+
+
+<p class="sub">
+
+তথ্য লিখুন — ডানদিকে সুন্দর নোটিশ তৈরি হবে।
+
+</p>
+
+
+<label for="title">
+
+নোটিশের শিরোনাম
+
+</label>
+
+
+<input
+  id="title"
+  value="গুরুত্বপূর্ণ নোটিশ"
+>
+
+
+
+<label for="subject">
+
+বিষয়
+
+</label>
+
+
+<input
+  id="subject"
+  placeholder="যেমন: শারদ সংখ্যা — “আগমনী স্বর্ণ পল্লব”"
+>
+
+
+
+<label for="body">
+
+নোটিশের বক্তব্য
+
+</label>
+
+
+<textarea
+  id="body"
+  placeholder="এখানে আপনার নোটিশ লিখুন..."
+>সকল কবি, লেখক ও সাহিত্যপ্রেমী বন্ধুবান্ধবকে জানানো যাচ্ছে যে, ...</textarea>
+
+
+
+<div class="row">
+
+
+<div>
+
+<label for="date">
+
+তারিখ
+
+</label>
+
+
+<input
+  id="date"
+  type="date"
+>
+
+</div>
+
+
+<div>
+
+<label for="number">
+
+নোটিশ নং
+
+</label>
+
+
+<input
+  id="number"
+  placeholder="যেমন: ০১/২০২৬"
+>
+
+</div>
+
+
+</div>
+
+
+
+<label class="check">
+
+<input
+  id="optionalEditor"
+  type="checkbox"
+  checked
+>
+
+সম্পাদিকার নাম দেখাবেন
+
+</label>
+
+
+
+<div class="hint">
+
+<b>
+সম্পাদক:
+</b>
+
+পল্লব গুছাইত
+
+<br>
+
+<b>
+সম্পাদিকা:
+</b>
+
+আগমনী সামন্ত
+
+<span>
+(ঐচ্ছিক)
+</span>
+
+</div>
+
+
+
+<button
+  class="btn primary"
+  id="download"
+>
+
+⬇ PNG হিসেবে ডাউনলোড
+
+</button>
+
+
+
+<button
+  class="btn secondary"
+  id="clear"
+>
+
+↺ ফর্ম পরিষ্কার করুন
+
+</button>
+
+</section>
+
+
+
+<!-- ================= PREVIEW ================= -->
+
+<section
+  class="preview"
+  id="preview"
+>
+
+<div class="preview-head">
+
+<strong>
+
+নোটিশের লাইভ প্রিভিউ
+
+</strong>
+
+
+<span class="badge">
+
+PNG Ready
+
+</span>
+
+</div>
+
+
+<div class="canvas-wrap">
+
+<canvas
+  id="poster"
+  width="1200"
+  height="1500"
+></canvas>
+
+</div>
+
+</section>
+
+</div>
+
+</main>
+
+
+
+<div class="footer">
+
+© ২০২৬ কবিতার ঝুড়ি সাহিত্য পত্রিকা
+•
+Notice Board Generator
+
+</div>
+
+
+
+<div
+  class="toast"
+  id="toast"
+>
+
+PNG ডাউনলোড শুরু হয়েছে
+
+</div>
+
+
+
+<script>
+
+
+const $ =
+  id => document.getElementById(id);
+
+
+const c =
+  $("poster");
+
+
+const ctx =
+  c.getContext("2d");
+
+
+const logo =
+  new Image();
+
+
+logo.src =
+  "logo.jpg";
+
+
+$("date").value =
+  new Date()
+  .toISOString()
+  .slice(0,10);
+
+
+const FONT =
+  'Noto Sans Bengali, Nirmala UI, SolaimanLipi, sans-serif';
+
+
+
+/* =========================================
+   FONT FIT
+========================================= */
+
+function fitFont(
+  text,
+  maxWidth,
+  start,
+  min=22
+){
+
+  let size=start;
+
+
+  while(size>min){
+
+    ctx.font =
+      `900 ${size}px ${FONT}`;
+
+
+    if(
+      ctx.measureText(text).width
+      <= maxWidth
+    ){
+
+      return size;
+
+    }
+
+
+    size-=2;
+
+  }
+
+
+  return min;
+
+}
+
+
+
+/* =========================================
+   TEXT WRAP
+========================================= */
+
+function wrap(
+  text,
+  maxWidth,
+  font
+){
+
+  ctx.font=font;
+
+
+  const words =
+    text
+    .replace(/\n/g," \n ")
+    .split(/\s+/);
+
+
+  const lines=[];
+
+  let line="";
+
+
+  for(
+    const w of words
+  ){
+
+    if(w==="\\n"){
+
+      if(line)
+        lines.push(line);
+
+      lines.push("");
+
+      line="";
+
+      continue;
+
+    }
+
+
+    const test =
+      line
+      ? line+" "+w
+      : w;
+
+
+    if(
+      ctx.measureText(test).width
+      <= maxWidth
+    ){
+
+      line=test;
+
+    }else{
+
+      if(line)
+        lines.push(line);
+
+      line=w;
+
+    }
+
+  }
+
+
+  if(line)
+    lines.push(line);
+
+
+  return lines;
+
+}
+
+
+
+/* =========================================
+   CENTER TEXT
+========================================= */
+
+function center(
+  text,
+  y,
+  font,
+  color
+){
+
+  ctx.font=font;
+
+  ctx.fillStyle=color;
+
+  ctx.textAlign="center";
+
+
+  ctx.fillText(
+    text,
+    600,
+    y
+  );
+
+}
+
+
+
+/* =========================================
+   ORNAMENT
+========================================= */
+
+function ornament(y){
+
+  ctx.strokeStyle="#b58b4a";
+
+  ctx.lineWidth=2;
+
+
+  ctx.beginPath();
+
+  ctx.moveTo(250,y);
+
+  ctx.lineTo(950,y);
+
+  ctx.stroke();
+
+
+  ctx.beginPath();
+
+  ctx.arc(
+    600,
+    y,
+    7,
+    0,
+    Math.PI*2
+  );
+
+  ctx.stroke();
+
+
+  ctx.beginPath();
+
+  ctx.arc(
+    575,
+    y,
+    3,
+    0,
+    Math.PI*2
+  );
+
+  ctx.arc(
+    625,
+    y,
+    3,
+    0,
+    Math.PI*2
+  );
+
+  ctx.stroke();
+
+}
+
+
+
+/* =========================================
+   DRAW NOTICE
+========================================= */
+
+function draw(){
+
+  ctx.clearRect(
+    0,
+    0,
+    1200,
+    1500
+  );
+
+
+  /* Background */
+
+  ctx.fillStyle="#fffaf0";
+
+  ctx.fillRect(
+    0,
+    0,
+    1200,
+    1500
+  );
+
+
+  /* Paper texture */
+
+  for(
+    let i=0;
+    i<2600;
+    i++
+  ){
+
+    ctx.fillStyle =
+      `rgba(
+        120,
+        95,
+        50,
+        ${Math.random()*.018}
+      )`;
+
+
+    ctx.fillRect(
+      Math.random()*1200,
+      Math.random()*1500,
+      1,
+      1
+    );
+
+  }
+
+
+
+  /* Double frame */
+
+  ctx.strokeStyle="#173d32";
+
+  ctx.lineWidth=8;
+
+  ctx.strokeRect(
+    28,
+    28,
+    1144,
+    1444
+  );
+
+
+  ctx.lineWidth=2;
+
+  ctx.strokeRect(
+    46,
+    46,
+    1108,
+    1408
+  );
+
+
+  ctx.strokeStyle="#b58b4a";
+
+  ctx.lineWidth=1;
+
+  ctx.strokeRect(
+    60,
+    60,
+    1080,
+    1428
+  );
+
+
+
+  /* Corner motifs */
+
+  ctx.fillStyle="#b58b4a";
+
+
+  [
+    [70,75],
+    [1130,75],
+    [70,1425],
+    [1130,1425]
+  ]
+  .forEach(
+    ([x,y])=>{
+
+      ctx.beginPath();
+
+      ctx.arc(
+        x,
+        y,
+        6,
+        0,
+        Math.PI*2
+      );
+
+      ctx.fill();
+
+
+      ctx.beginPath();
+
+      ctx.arc(
+        x,
+        y,
+        14,
+        0,
+        Math.PI*2
+      );
+
+      ctx.stroke();
+
+    }
+  );
+
+
+
+  /* Logo */
+
+  if(
+    logo.complete &&
+    logo.naturalWidth
+  ){
+
+    ctx.save();
+
+    ctx.beginPath();
+
+    ctx.arc(
+      600,
+      190,
+      118,
+      0,
+      Math.PI*2
+    );
+
+    ctx.clip();
+
+
+    ctx.drawImage(
+      logo,
+      482,
+      72,
+      236,
+      236
+    );
+
+
+    ctx.restore();
+
+
+    ctx.strokeStyle="#173d32";
+
+    ctx.lineWidth=4;
+
+
+    ctx.beginPath();
+
+    ctx.arc(
+      600,
+      190,
+      121,
+      0,
+      Math.PI*2
+    );
+
+    ctx.stroke();
+
+  }
+
+
+
+  /* English title */
+
+  center(
+    "THE VOICE OF POETRY",
+    335,
+    "600 18px Georgia, serif",
+    "#80663b"
+  );
+
+
+
+  /* Magazine name */
+
+  center(
+    "কবিতার ঝুড়ি সাহিত্য পত্রিকা",
+    405,
+    `900 ${
+      fitFont(
+        "কবিতার ঝুড়ি সাহিত্য পত্রিকা",
+        950,
+        54,
+        34
+      )
+    }px ${FONT}`,
+    "#173d32"
+  );
+
+
+  ornament(445);
+
+
+
+  /* Notice box */
+
+  ctx.fillStyle="#173d32";
+
+  ctx.roundRect(
+    410,
+    485,
+    380,
+    92,
+    18
+  );
+
+  ctx.fill();
+
+
+  center(
+    "নোটিশ",
+    550,
+    `900 56px ${FONT}`,
+    "#fffaf0"
+  );
+
+
+
+  /* ======================================
+     SUBJECT
+     Automatically wraps
+  ====================================== */
+
+  const sub =
+    $("subject").value.trim();
+
+
+  let y=665;
+
+
+  if(sub){
+
+    const subText =
+      "বিষয় : "+sub;
+
+
+    const subSize =
+      fitFont(
+        subText,
+        880,
+        34,
+        21
+      );
+
+
+    const subFont =
+      `900 ${subSize}px ${FONT}`;
+
+
+    const subLines =
+      wrap(
+        subText,
+        880,
+        subFont
+      );
+
+
+    ctx.font=subFont;
+
+    ctx.fillStyle="#8d241d";
+
+    ctx.textAlign="center";
+
+
+    for(
+      const line
+      of subLines.slice(0,3)
+    ){
+
+      ctx.fillText(
+        line,
+        600,
+        y
+      );
+
+
+      y +=
+        Math.max(
+          43,
+          Math.round(
+            subSize*1.38
+          )
+        );
+
+    }
+
+
+    y+=14;
+
+  }
+
+
+
+  ornament(y);
+
+  y+=62;
+
+
+
+  /* ======================================
+     BODY — MAIN FIX
+  ====================================== */
+
+  const body =
+    $("body").value.trim();
+
+
+  let bodySize=31;
+
+
+  let bodyFont =
+    `400 ${bodySize}px ${FONT}`;
+
+
+  let lines =
+    wrap(
+      body,
+      860,
+      bodyFont
+    );
+
+
+  /*
+    Long notice:
+    automatically reduce font size
+    until it fits.
+  */
+
+  while(
+
+    (
+      lines.length>10 ||
+
+      y+
+      lines.length*
+      (bodySize*1.48)
+      >1085
+
+    )
+
+    &&
+
+    bodySize>21
+
+  ){
+
+    bodySize-=2;
+
+
+    bodyFont =
+      `400 ${bodySize}px ${FONT}`;
+
+
+    lines =
+      wrap(
+        body,
+        860,
+        bodyFont
+      );
+
+  }
+
+
+
+  ctx.font=bodyFont;
+
+  ctx.fillStyle="#24302b";
+
+  ctx.textAlign="center";
+
+
+  const lineGap =
+    Math.max(
+      36,
+      Math.round(
+        bodySize*1.48
+      )
+    );
+
+
+  const maxBodyLines=10;
+
+
+  for(
+    const line
+    of lines.slice(
+      0,
+      maxBodyLines
+    )
+  ){
+
+    ctx.fillText(
+      line,
+      600,
+      y
+    );
+
+
+    y+=lineGap;
+
+  }
+
+
+
+  /*
+    If text is still too long,
+    show an ellipsis rather than
+    allowing it to collide.
+  */
+
+  if(
+    lines.length>maxBodyLines
+  ){
+
+    ctx.font =
+      `700 ${
+        Math.max(
+          20,
+          bodySize-2
+        )
+      }px ${FONT}`;
+
+
+    ctx.fillText(
+      "…",
+      600,
+      y
+    );
+
+
+    y+=lineGap;
+
+  }
+
+
+
+  /* ======================================
+     DATE + NOTICE NUMBER
+     Positioned AFTER body
+  ====================================== */
+
+  const date =
+    $("date").value;
+
+
+  const no =
+    $("number").value.trim();
+
+
+  const meta=[];
+
+
+  if(no){
+
+    meta.push(
+      "নোটিশ নং: "+no
+    );
+
+  }
+
+
+  if(date){
+
+    meta.push(
+      "তারিখ: "+
+      new Date(
+        date+"T00:00:00"
+      )
+      .toLocaleDateString(
+        "bn-IN"
+      )
+    );
+
+  }
+
+
+  let metaY =
+    y+26;
+
+
+  const metaText =
+    meta.join(
+      "   •   "
+    );
+
+
+  if(metaText){
+
+    const metaSize =
+      fitFont(
+        metaText,
+        820,
+        23,
+        16
+      );
+
+
+    center(
+      metaText,
+      metaY,
+      `700 ${metaSize}px ${FONT}`,
+      "#80663b"
+    );
+
+
+    y=metaY;
+
+  }
+
+
+
+  /* ======================================
+     SIGNATURE — DYNAMIC POSITION
+  ====================================== */
+
+  /*
+    IMPORTANT:
+    Signature is NOT fixed anymore.
+    It moves according to content.
+  */
+
+  let sigY =
+    Math.max(
+      y+78,
+      1180
+    );
+
+
+  /*
+    Keep signature inside
+    printable area.
+  */
+
+  sigY =
+    Math.min(
+      sigY,
+      1285
+    );
+
+
+  ornament(
+    sigY-45
+  );
+
+
+
+  /* Editor */
+
+  ctx.textAlign="left";
+
+  ctx.font=
+    `800 23px ${FONT}`;
+
+  ctx.fillStyle="#8d241d";
+
+
+  ctx.fillText(
+    "সম্পাদক",
+    145,
+    sigY+5
+  );
+
+
+  ctx.font=
+    `900 31px ${FONT}`;
+
+  ctx.fillStyle="#173d32";
+
+
+  ctx.fillText(
+    "পল্লব গুছাইত",
+    145,
+    sigY+50
+  );
+
+
+
+  /* Optional Editor */
+
+  if(
+    $("optionalEditor").checked
+  ){
+
+    ctx.textAlign="right";
+
+    ctx.font=
+      `800 23px ${FONT}`;
+
+    ctx.fillStyle="#8d241d";
+
+
+    ctx.fillText(
+      "সম্পাদিকা",
+      1055,
+      sigY+5
+    );
+
+
+    ctx.font=
+      `900 31px ${FONT}`;
+
+    ctx.fillStyle="#173d32";
+
+
+    ctx.fillText(
+      "আগমনী সামন্ত",
+      1055,
+      sigY+50
+    );
+
+  }
+
+
+
+  /* Footer */
+
+  ctx.textAlign="center";
+
+  ctx.font=
+    `600 17px ${FONT}`;
+
+  ctx.fillStyle="#80663b";
+
+
+  ctx.fillText(
+    "কবিতার ঝুড়ি সাহিত্য পত্রিকা",
+    600,
+    1410
+  );
+
+}
+
+
+
+/* =========================================
+   LIVE PREVIEW
+========================================= */
+
+[
+  "title",
+  "subject",
+  "body",
+  "date",
+  "number"
+]
+.forEach(
+  id =>
+    $(id)
+    .addEventListener(
+      "input",
+      draw
+    )
+);
+
+
+$("optionalEditor")
+.addEventListener(
+  "change",
+  draw
+);
+
+
+
+/* =========================================
+   CLEAR
+========================================= */
+
+$("clear").onclick=()=>{
+
+  $("title").value =
+    "গুরুত্বপূর্ণ নোটিশ";
+
+
+  $("subject").value =
+    "";
+
+
+  $("body").value =
+    "";
+
+
+  $("number").value =
+    "";
+
+
+  $("date").value =
+    new Date()
+    .toISOString()
+    .slice(0,10);
+
+
+  $("optionalEditor").checked =
+    true;
+
+
+  draw();
+
+};
+
+
+
+/* =========================================
+   PNG DOWNLOAD
+========================================= */
+
+$("download").onclick=()=>{
+
+  draw();
+
+
+  const a =
+    document.createElement("a");
+
+
+  const safe =
+    (
+      $("subject").value ||
+      $("title").value ||
+      "notice"
+    )
+    .replace(
+      /[^\u0980-\u09FF\w-]+/g,
+      "_"
+    )
+    .slice(
+      0,
+      60
+    );
+
+
+  a.download =
+    (safe || "notice")+
+    ".png";
+
+
+  a.href =
+    c.toDataURL(
+      "image/png"
+    );
+
+
+  a.click();
+
+
+  $("toast")
+    .classList
+    .add("show");
+
+
+  setTimeout(
+    ()=>{
+      $("toast")
+      .classList
+      .remove("show");
+    },
+    2200
+  );
+
+};
+
+
+
+/* =========================================
+   LOGO LOAD
+========================================= */
+
+logo.onload =
+  draw;
+
+
+draw();
+
+</script>
+
+</body>
+</html>
